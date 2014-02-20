@@ -1,0 +1,114 @@
+!!! 5
+-# paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/
+<!--[if lt IE 7]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if gt IE 8]><!-->
+%html.no-js{ :lang => "en" }
+  <!--<![endif]-->
+  %head
+    %meta{ charset: 'utf-8' }
+    %meta(http-equiv='X-UA-Compatible' content='IE=edge,chrome=1')
+    %title Customer Lobby
+    %meta{ name: 'description', content: '' }
+    %meta{ name: 'viewport', content: 'width=device-width' }
+
+    = stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
+    = csrf_meta_tags
+  %body
+    %header
+      .navbar.navbar-inverse.navbar-fixed-top
+        .navbar-header
+          %button.navbar-toggle{ type: 'button', data: { toggle: 'collapse', target: '.navbar-collapse' } }
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a.navbar-brand{ href: '#' }
+            %span.glyphicon.glyphicon-bullhorn
+            Customer Lobby
+        .navbar-collapse.collapse
+          %ul.nav.navbar-nav.navbar-right
+            %li.dropdown.visible-sm.visible-xs
+              %a.dropdown-toggle{ href: '#', data: { toggle: 'dropdown' } }
+                %span.glyphicon.glyphicon-th-list
+                Menu
+                %b.caret
+              %ul.dropdown-menu
+                %li
+                  %a{ href: '#' } Results
+                %li
+                  %a{ href: '#' } Customers
+                %li
+                  %a{ href: '#' } Reviews
+                %li
+                  %a{ href: '#' } Campaigns
+                %li
+                  %a{ href: '#' } Appointments
+                %li
+                  %a{ href: '#' } Settings
+            %li
+              %a{ href: '#' } HELP
+            %li.divider
+            %li.dropdown
+              %a.dropdown-toggle{ href: '#', data: { toggle: 'dropdown' } }
+                %span.glyphicon.glyphicon-user
+                John Doe
+                %b.caret
+              %ul.dropdown-menu
+                %li
+                  %a{ href: '#' } My Account
+                %li
+                  %a{ href: '#' } Sign Out
+    %section.content
+      %aside.hidden-sm.hidden-xs.col-md-1.sidebar{ role: 'sidebar' }
+        %ul.nav.nav-pills.nav-stacked
+          %li.active
+            %a{ href: '#' }
+              %span.glyphicon.glyphicon-stats
+              %br/
+              Result
+          %li
+            %a{ href: '#' }
+              %span.glyphicon.glyphicon-user
+              %br/
+              Customers
+          %li
+            %a{ href: '#' }
+              %span.glyphicon.glyphicon-comment
+              %br/
+              Reviews
+          %li
+            %a{ href: '#' }
+              %span.glyphicon.glyphicon-bullhorn
+              %br/
+              Campaigns
+          %li
+            %a{ href: '#' }
+              %span.glyphicon.glyphicon-calendar
+              %br/
+              Appointments
+        .sidebar-bottom
+          %ul.nav.nav-pills.nav-stacked
+            %li
+              %a{ href: '#' }
+                %span.glyphicon.glyphicon-cog
+                %br/
+                Settings
+        %ul.nav.nav-pills.nav-stacked
+      %section.col-xs-12.col-sm-12.col-md-11.main-content{ role: 'main-content' }
+        %ol.breadcrumb
+          %li
+            %a{ href: '#' } Acme Enterprise
+          %li
+            %a{ href: '#' } Contacts
+          %li Contact Detail
+        = yield
+    
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    -#  asynchronous google analytics: mathiasbynens.be/notes/async-analytics-snippet
+    -#  change the UA-XXXXX-X to be your site's ID
+    :javascript
+      var _gaq=[["_setAccount","UA-XXXXX-X"],["_trackPageview"],["_trackPageLoadTime"]];
+      (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+      g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
+      s.parentNode.insertBefore(g,s)}(document,"script"));

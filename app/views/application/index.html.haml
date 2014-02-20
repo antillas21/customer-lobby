@@ -1,0 +1,65 @@
+.row
+  .col-md-10.col-md-offset-1
+    %button.btn.btn-primary.btn-lg{ data: { toggle: 'modal', target: '#myModal' } }
+      Update Contact
+
+#myModal.modal.fade
+  .modal-dialog.modal-lg
+    .modal-content
+      .modal-header
+        %button.close{ data: { dismiss: 'modal' }, aria: { hidden: true } }x
+        %h4 Update Contact
+      .modal-body
+        %form.form.form-horizontal
+          .form-group
+            %label.col-sm-2.control-label First Name
+            .col-sm-4
+              %input.form-control{ type: 'text' }
+            %label.col-sm-2.control-label Last Name
+            .col-sm-4
+              %input.form-control{ type: 'text' }
+          %fieldset
+            .col-xs-2.col-sm-2.legend Contact
+            .col-xs-10.col-sm-10.is-bordered
+            .clearfix
+            .form-group
+              %label.col-sm-2.control-label Email
+              .col-sm-6
+                %input.form-control{ type: 'email' }
+            .form-group
+              %label.col-sm-2.control-label Phone Number
+              .col-sm-4
+                %input.form-control{ type: 'text' }
+              %label.col-sm-2.control-label Mobile Phone
+              .col-sm-4
+                %input.form-control{ type: 'text' }
+          %fieldset
+            .col-xs-2.col-sm-2.legend Address
+            .col-xs-10.col-sm-10.is-bordered
+            .clearfix
+            .form-group
+              %label.col-sm-2.control-label Line 1
+              .col-sm-4
+                %input.form-control{ type: 'text' }
+              %label.col-sm-2.control-label Line 2
+              .col-sm-4
+                %input.form-control{ type: 'text' }
+            .form-group
+              %label.col-sm-2.control-label City
+              .col-sm-4
+                %input.form-control{ type: 'text' }
+              %label.col-sm-2.control-label State
+              .col-sm-4
+                %input.form-control{ type: 'text' }
+            .form-group
+              %label.col-sm-2.control-label Zip
+              .col-sm-4
+                %input.form-control{ type: 'text' }
+              %label.col-sm-2.control-label Country
+              .col-sm-4
+                %select.form-control
+                  %option{ value: 'United States' } United States
+                  %option{ value: 'Canada' } Canada
+                  %option{ value: 'United Kingdom' } United Kingdom
+      .modal-footer
+        %button.btn.btn-success Save
