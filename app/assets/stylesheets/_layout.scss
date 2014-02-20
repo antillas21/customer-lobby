@@ -1,0 +1,23 @@
+.content {
+  position: relative;
+}
+.sidebar {
+  background: #3f474d;
+  position: fixed;
+  top: 50px;
+  height: 100%;
+}
+.sidebar-bottom {
+  position: fixed;
+  bottom: 0;
+  width: 8.3333333333%;
+}
+.main-content {
+  position: relative;
+}
+
+@media (min-width: 992px) {
+  .main-content {
+    left: 8.3333333333%;
+  }
+}

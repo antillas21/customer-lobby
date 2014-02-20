@@ -1,0 +1,60 @@
+@import "compass/css3/box-shadow";
+
+$brand-primary: #e69422;
+
+.nav-pills > li > a {
+  border-radius: 0px;
+  padding: 2em 0 0 0;
+}
+ul.nav.nav-pills.nav-stacked {
+  li a {
+    font-size: 85%;
+    height: 7em;
+    text-align: center;
+    text-transform: uppercase;
+  }
+}
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+  background-color: $brand-primary;
+}
+.breadcrumb {
+  border-bottom: 1px solid #cacaca;
+  border-radius: 0px;
+  @include box-shadow(#bbb 2px 1px 8px);
+}
+.breadcrumb a {
+  color: #999;
+  &:hover {
+    color: $brand-primary;
+  }
+}
+.control-label {
+  padding-right: 1em;
+}
+.legend {
+  text-align: right;
+  text-transform: uppercase;
+  padding: 1em;
+}
+.modal-footer {
+  border-top: 0 none;
+  text-align: left;
+}
+.btn-success {
+  padding: 6px 30px;
+  text-transform: uppercase;
+}
+.modal-header {
+  padding: 10px 15px;
+  border-bottom: 0 none;
+  background-color: #3f474d;
+  color: #fff;
+  h4 {
+    font-weight: normal;
+    text-transform: uppercase;
+  }
+}
+.close {
+  color: #fff;
+  opacity: 0.9;
+}
